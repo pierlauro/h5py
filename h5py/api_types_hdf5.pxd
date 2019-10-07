@@ -803,8 +803,45 @@ cdef extern from "hdf5.h":
       int dirty_bytes_threshold
       #  int metadata_write_strategy # present in 1.8.6 and higher
 
+cdef extern from "H5VLconnector.h":
+#  === H5VL - Virtual Object Layer API ================================
+    ctypedef struct H5VL_group_class_t:
+        pass
 
+    ctypedef struct H5VL_attr_class_t:
+        pass
 
+    ctypedef struct H5VL_dataset_class_t:
+        pass
+
+    ctypedef struct H5VL_datatype_class_t:
+        pass
+
+    ctypedef struct H5VL_file_class_t:
+        pass
+
+    ctypedef struct H5VL_link_class_t:
+        pass
+
+    ctypedef struct H5VL_object_class_t:
+        pass
+
+    ctypedef struct H5VL_request_class_t:
+        pass
+
+    ctypedef struct H5VL_class_t:
+        H5VL_dataset_class_t dataset_cls
+        H5VL_file_class_t file_cls
+        H5VL_group_class_t group_cls
+
+    ctypedef struct H5VL_class_value_t:
+        pass
+
+    ctypedef struct H5VL_info_class_t:
+        pass
+
+    ctypedef struct H5VL_wrap_class_t:
+        pass
 
 cdef extern from "hdf5_hl.h":
 # === H5DS - Dimension Scales API =============================================
